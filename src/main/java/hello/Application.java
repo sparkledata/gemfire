@@ -38,13 +38,13 @@ public class Application {
     }
 
     @Bean
-    LocalRegionFactoryBean<String, Person> helloRegion(final GemFireCache cache) {
-        LocalRegionFactoryBean<String, Person> helloRegion = new LocalRegionFactoryBean<>();
-        helloRegion.setCache(cache);
-        helloRegion.setClose(false);
-        helloRegion.setName("hello");
-        helloRegion.setPersistent(false);
-        return helloRegion;
+    LocalRegionFactoryBean<String, Person> personRegion(final GemFireCache cache) {
+        LocalRegionFactoryBean<String, Person> personRegion = new LocalRegionFactoryBean<>();
+        personRegion.setCache(cache);
+        personRegion.setClose(false);
+        personRegion.setName("person");
+        personRegion.setPersistent(false);
+        return personRegion;
     }
 
     public static void main(String[] args) {
