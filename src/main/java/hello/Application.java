@@ -23,7 +23,7 @@ public class Application {
     @Bean
     Properties gemfireProperties() {
         Properties gemfireProperties = new Properties();
-        gemfireProperties.setProperty("name", "DataGemFireApplication");
+        gemfireProperties.setProperty("name", "RelatedProductsApplication");
         gemfireProperties.setProperty("mcast-port", "0");
         gemfireProperties.setProperty("log-level", "config");
         return gemfireProperties;
@@ -38,13 +38,13 @@ public class Application {
     }
 
     @Bean
-    LocalRegionFactoryBean<String, Person> personRegion(final GemFireCache cache) {
-        LocalRegionFactoryBean<String, Person> personRegion = new LocalRegionFactoryBean<>();
-        personRegion.setCache(cache);
-        personRegion.setClose(false);
-        personRegion.setName("person");
-        personRegion.setPersistent(false);
-        return personRegion;
+    LocalRegionFactoryBean<String, ProductCorrelation> productCorrelationRegion(final GemFireCache cache) {
+        LocalRegionFactoryBean<String, ProductCorrelation> region = new LocalRegionFactoryBean<>();
+        region.setCache(cache);
+        region.setClose(false);
+        region.setName("correlation");
+        region.setPersistent(false);
+        return region;
     }
 
     public static void main(String[] args) {
