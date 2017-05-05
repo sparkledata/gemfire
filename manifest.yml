@@ -1,3 +1,5 @@
 name: gemfire-springboot
 path: target/gemfire-springboot-0.1.0.jar
 buildpack: https://github.com/cloudfoundry/java-buildpack
+services:
+- cache

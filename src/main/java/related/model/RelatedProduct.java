@@ -1,6 +1,8 @@
-package hello;
+package related.model;
 
-public class RelatedProduct {
+import java.io.Serializable;
+
+public class RelatedProduct implements Serializable {
     public String productId;
     public double correlationScore;
 

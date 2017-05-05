@@ -1,13 +1,14 @@
-package hello;
+package related.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.gemfire.mapping.Region;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Region("correlation")
-public class ProductCorrelation {
+public class ProductCorrelation implements Serializable {
     @Id
     public String productId;
     public List<RelatedProduct> relatedProducts;
